@@ -24,7 +24,7 @@ public class AccountController {
      * @return getCard.
      */
     @GetMapping(value = "/core/accounts")
-    public Mono<Account> getCard(@RequestParam(name = "cardNumber") final String cardNumber) {
+    public Mono<Account> getAccount(@RequestParam(name = "cardNumber") final String cardNumber) {
         return service.getAllAccounts(cardNumber)
                 .flatMap(card -> {
                     Integer amount = 0;
